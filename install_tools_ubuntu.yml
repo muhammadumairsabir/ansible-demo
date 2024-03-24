@@ -1,0 +1,14 @@
+---
+
+- name: Install Apt Package
+  hosts: all
+  become: yes
+  tasks:
+    - name: Install Apt Package
+      apt:
+        name: "{{ item }}"
+        state: present
+      with_items:
+        - wget
+        - htop
+        - jq

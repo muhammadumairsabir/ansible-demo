@@ -1,0 +1,13 @@
+---
+
+- name: Install Homebrew Package
+  hosts: localhost
+  tasks:
+    - name: Install Homebrew Package
+      homebrew:
+        name: "{{ item }}"
+        state: present
+      with_items:
+        - wget
+        - htop
+        - jq
